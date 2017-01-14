@@ -1,0 +1,58 @@
+<md-card>
+    <md-card-title>
+        <md-card-title-text>
+        <span class="md-headline">Add a Note</span>
+        <span class="md-subhead">A a note about Git. You can even add an example with the context it's used in.</span>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+        <form name="addNote">
+            <div layout-gt-sm="row">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Command</label>
+                    <input ng-model="addCtrl.note.command">
+                </md-input-container>
+            </div>
+
+            <div layout-gt-sm="row">
+                 <md-input-container class="md-block" flex-gt-sm>
+                    <label>Description</label>
+                    <textarea ng-model="addCtrl.note.data.description" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+                </md-input-container>
+            </div>
+            <md-card-actions ng-hide="addCtrl.note.data.examples.length >= 1" layout="row" layout-align="end center">
+                <md-button ng-click="addCtrl.addExample()" class="md-raised md-accent">Add An Example</md-button>
+                <md-button ng-click="addCtrl.addNote()" class="md-raised md-primary">Submit</md-button>
+            </md-card-actions>
+            <md-divider ng-if="addCtrl.note.data.examples.length >= 1"></md-divider>
+            <div ng-repeat="example in addCtrl.note.data.examples track by $index">
+                <p>Example {{$index + 1}}</p>
+
+                 <div layout-gt-sm="row"> 
+                     <md-input-container  class="md-block" flex-gt-sm>
+                        <label>Context</label>
+                        <input ng-model="example.context">
+                    </md-input-container>
+                 </div>
+                <div layout-gt-sm="row">
+                    <md-input-container flex="100" class="md-block" flex-gt-sm>
+                        <label >Input</label>
+                        <input ng-model="example.input">
+                    </md-input-container>
+                </div>
+                <div layout-gt-sm="row">
+                    <md-input-container flex="100" class="md-block" flex-gt-sm>
+                        <label>Ouput</label>
+                        <input ng-model="example.output">
+                    </md-input-container>
+                </div>
+
+            </div>
+            <md-card-actions ng-show="addCtrl.note.data.examples.length >= 1" layout="row" layout-align="end center">
+                <md-button ng-click="addCtrl.addExample()" class="md-raised md-accent">Add An Example</md-button>
+                <md-button ng-click="addCtrl.addNote()" class="md-raised md-primary">Submit</md-button>
+            </md-card-actions>
+
+        </form>
+    </md-card-content>
+</md-card>

@@ -1,0 +1,25 @@
+header {
+    md-content {
+        background-color: red;
+    }
+    .brand {
+        cursor: pointer;
+    }
+    .logo {
+        width: 2.5vw;
+        height: 100%;
+        background-image: url('https://git-scm.com/images/logos/downloads/Git-Icon-Black.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-left: 10px;
+    }
+    & * {
+        color: white;
+        font-weight: 600;
+    } 
+    md-nav-bar md-nav-ink-bar {
+        color: white;
+        background: white;
+    }  
+}

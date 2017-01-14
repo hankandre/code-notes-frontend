@@ -1,0 +1,14 @@
+footer {
+    background-color: lightgrey;
+    min-height: 15vh;
+    position: relative;
+    // flex: 1 25;
+    ul.nav-list {
+        list-style: none;
+    }
+    .copyright {
+        position: absolute;
+        right: 1vw;
+        bottom: 0;
+    }
+}

@@ -1,0 +1,7 @@
+<md-content layout="row" layout-align="center center">
+    <md-chips ng-model="langCtrl.languages" readonly="true" md-removable="true">
+        <md-chip-template>
+            <span ng-click="appCtrl.select($chip)">{{$chip.command}}</span>
+        </md-chip-template>
+    </md-chips>
+</md-content>
